@@ -1,0 +1,23 @@
+.filter-item {
+  position: relative;
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  padding: 10px;
+  background: #888;
+  color: #262524;
+}
+
+.filter-container {
+  display: grid;
+  gap: 16px 9px;
+}
+.wrap{
+  //display: flex;
+  width: 70%;
+  margin: 0 auto;
+}
+.btn > li{
+  cursor: pointer;
+}
