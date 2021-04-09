@@ -1,7 +1,7 @@
 import React from "react";
 import {MenuList} from "./MenuList";
 
-export function Hamburger(props) {
+export const Hamburger = React.memo((props) => {
     return <>
         <div className={props.state ? "menu-wrapper" : "menu-wrapper open"}>
             <button onClick={props.onClick} className={props.state ? "hamburger-menu" : "hamburger-menu open"}>
@@ -9,14 +9,16 @@ export function Hamburger(props) {
                 <span className='hamburger-overlay'/>
             </button>
             <div className="Menu ham-tilt">
-                <ul className="Menu-list">
+                <nav>
+                    <ul className="Menu-list">
                         <MenuList name={'Home'}/>
                         <MenuList name={'Work'}/>
                         <MenuList name={'Services'}/>
                         <MenuList name={'Blog'}/>
                         <MenuList name={'Contact'}/>
-                </ul>
+                    </ul>
+                </nav>
             </div>
         </div>
     </>
-}
+})

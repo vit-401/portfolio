@@ -3,23 +3,11 @@ import Particles from "react-particles-js";
 import ReactTypingEffect from "react-typing-effect";
 import photo from "../../common/photo/IMG_9397-2.jpg";
 
-export function Header(props) {
+export const Header = React.memo((props) => {
     return <header className={"header"}>
         <Particles className={"particles"} params={props.params}/>
         <Particles className={"particles"} params={props.params1}/>
         <div className="container">
-            <nav className="menu">
-                <div className="menu__btn">
-                    <div/>
-                    <div/>
-                    <div/>
-                </div>
-                <ul className={"menu__list"}>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Work</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
             <div className="header__inner">
                 <div className="header__item">
                     <div className="header__discription">
@@ -40,4 +28,4 @@ export function Header(props) {
             </div>
         </div>
     </header>;
-}
+})

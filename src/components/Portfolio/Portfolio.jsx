@@ -1,66 +1,44 @@
 import React from "react";
 import './style.scss'
-import Isotope from 'isotope-layout'
+import {CardComponent} from "./CardComponent";
 
-export function Portfolio() {
-
-    const isotope = React.useRef()
-    // store the filter keyword in a state
-    const [filterKey, setFilterKey] = React.useState('*')
-
-    // initialize an Isotope object with configs
-    React.useEffect(() => {
-        isotope.current = new Isotope('.filter-container', {
-            itemSelector: '.filter-item',
-            layoutMode: 'fitRows',
-            percentPosition: true,
-            masonry: {
-                columnWidth: '.grid-sizer'
-            }
-        })
-        // cleanup
-        return () => isotope.current.destroy()
-    }, [])
-
-    // handling filter key change
-    React.useEffect(() => {
-        filterKey === '*'
-            ? isotope.current.arrange({filter: `*`})
-            : isotope.current.arrange({filter: `.${filterKey}`})
-    }, [filterKey])
-
-    const handleFilterKeyChange = key => () => setFilterKey(key)
-
+export const Portfolio = React.memo((props) => {
+    const [activeFilter, setActiveFilter] = React.useState('All')
+    const obj = [
+        {value: 'All', id: 1, handler: props.handleFilterAll},
+        {value: 'Veges', id: 2, handler: props.handleFilterVege},
+        {value: 'Fruits', id: 3, handler: props.handleFilterFruit},
+    ]
 
     return <section className="work">
         <div className="container">
-            <div>My Works</div>
-            <ul className={'btn'}>
-                <li onClick={handleFilterKeyChange('*')}>ALL</li>
-                <li onClick={handleFilterKeyChange('vege')}>Show Veges</li>
-                <li onClick={handleFilterKeyChange('fruit')}>Show Fruits</li>
+            <div className={'workTitle'}>My Works</div>
+            <div className={'moduleLine'}/>
+            <ul className={"workFilters"}>
+                {
+                    obj.map((f) => {
+                        return <li key={f.id} className={activeFilter === f.value ? 'active' : ''} onClick={() => {
+                            f.handler()
+                            setActiveFilter(f.value)
+                        }}>{f.value}</li>
+                    })
+                }
+                {/*<li className={'active'} onClick={props.handleFilterAll}>ALL</li>*/}
+                {/*<li className={''} onClick={props.handleFilterVege}>Show Veges</li>*/}
+                {/*<li className={''} onClick={props.handleFilterFruit}>Show Fruits</li>*/}
             </ul>
-            <hr/>
-            <div className={'wrap'}>
+            <div className={"filterWrap"}>
                 <div className="filter-container">
-                    <div className="filter-item vege">
-                        <div className={'card'}>Cucumber</div>
-                    </div>
-                    <div className="filter-item fruit">
-                        <div className={'card'}>Apple</div>
-                    </div>
-                    <div className="filter-item fruit">
-                        <div className={'card'}>BANA</div>
-                    </div>
-                    <div className="filter-item fruit">
-                        <div className={'card'}>Orange</div>
-                    </div>
-                    <div className="filter-item fruit vege">
-                        <div className={'card'}>Tomato</div>
-                    </div>
+                    <CardComponent name={'Potato'} filterName={'vege'}/>
+                    <CardComponent name={'Apple'} filterName={'fruit'}/>
+                    <CardComponent name={'BANA'} filterName={'fruit'}/>
+                    <CardComponent name={'Orange'} filterName={'fruit'}/>
+                    <CardComponent name={'Tomato'} filterName={'vege'}/>
+                    <CardComponent name={'Ananas'} filterName={'fruit'}/>
+                    <CardComponent name={'grape'} filterName={'fruit'}/>
                 </div>
             </div>
 
         </div>
     </section>;
-}
+})
