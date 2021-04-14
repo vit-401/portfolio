@@ -52,7 +52,7 @@ export function Skills() {
         },
     ]
     return <section className="skills">
-        <div className="comtainer">
+        <div className="container">
             <div className="skillsTitle">Skills</div>
             <div className="skillsInner">
                 {
