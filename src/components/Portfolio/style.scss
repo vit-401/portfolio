@@ -10,7 +10,7 @@
   float: left;
   width: 20rem;
   height: 25rem;
-  margin: 20px;
+  margin: 33px;
   background: #888;
 }
 
@@ -81,13 +81,16 @@
 }
 
 .filter-container {
-  display: grid;
-  gap: 16px 9px;
+  //display: grid;
+  //grid-template-columns: repeat(2, 1fr);
+  //grid-template-rows: repeat(5, 1fr);
+  //grid-column-gap: 24px;
+  //grid-row-gap: 13px;
 }
 
 .filterWrap {
-  width: 100%;
-  margin: 0 auto;
+  //width: 100%;
+  //margin: 0 auto;
 }
 
 .workFilters {
@@ -150,4 +153,40 @@ li + li {
   margin: 30px auto;
 }
 
+
+@media (max-width: 1114px) {
+  .filter-container{
+    //width: 120%;
+  }
+}
+@media (max-width: 398px) {
+  .filter-item{
+    width: 19rem;
+    height: 22rem;
+  }
+}
+@media (max-width: 368px) {
+  .filter-item{
+    width: 16rem;
+    height: 19rem;
+  }
+  .cardDescription{
+    font-size: 10px;
+    line-height: 11px;
+  }
+  .cardDescriptionLinks{
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .cardContent{
+    padding: 20px;
+  }
+}
+@media (max-width: 348px) {
+  .filter-item{
+    width: 14rem;
+    height: 16rem;
+    margin: 15px;
+  }
+}
 //#1f1f20

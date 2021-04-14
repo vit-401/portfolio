@@ -1,6 +1,7 @@
 import React from "react";
 import {SkillsItem} from "./SkillsItem";
 import './style.scss'
+import v1 from 'uuid';
 
 
 export function Skills() {
@@ -56,7 +57,7 @@ export function Skills() {
             <div className="titleSection">Skills</div>
             <div className="skillsInner">
                 {
-                    dataItems.map(i => <SkillsItem urlImg={i.urlImg} title={i.title} text={i.text}/>)
+                    dataItems.map((i, index) => <SkillsItem key={v1()} urlImg={i.urlImg} title={i.title} text={i.text}/>)
                 }
             </div>
         </div>

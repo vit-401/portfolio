@@ -1,5 +1,6 @@
 import React from "react";
 import './style.scss'
+import v1 from 'uuid';
 import {CardComponent} from "./CardComponent";
 
 export const Portfolio = React.memo((props) => {
@@ -17,7 +18,7 @@ export const Portfolio = React.memo((props) => {
             <ul className={"workFilters"}>
                 {
                     obj.map((f) => {
-                        return <li key={f.id} className={activeFilter === f.value ? 'active' : ''} onClick={() => {
+                        return <li key={v1()} className={activeFilter === f.value ? 'active' : ''} onClick={() => {
                             f.handler()
                             setActiveFilter(f.value)
                         }}>{f.value}</li>
