@@ -3,7 +3,7 @@ import React from "react";
 export function Contact() {
     return <section className={"contact"}>
         <div className="container">
-            <div className="contactTitle">Contact</div>
+            <div className="titleSection">Contact</div>
 
             <form className="contactForm">
                 <input required placeholder='Name' type="text" className={"formContorl"}/>

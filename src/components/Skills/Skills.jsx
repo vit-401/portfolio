@@ -53,7 +53,7 @@ export function Skills() {
     ]
     return <section className="skills">
         <div className="container">
-            <div className="skillsTitle">Skills</div>
+            <div className="titleSection">Skills</div>
             <div className="skillsInner">
                 {
                     dataItems.map(i => <SkillsItem urlImg={i.urlImg} title={i.title} text={i.text}/>)

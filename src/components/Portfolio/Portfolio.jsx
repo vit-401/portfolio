@@ -12,7 +12,7 @@ export const Portfolio = React.memo((props) => {
 
     return <section className="work">
         <div className="container">
-            <div className={'workTitle'}>My Works</div>
+            <div className={'titleSection'}>My Works</div>
             <div className={'moduleLine'}/>
             <ul className={"workFilters"}>
                 {
