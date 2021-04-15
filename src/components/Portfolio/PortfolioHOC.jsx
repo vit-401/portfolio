@@ -32,7 +32,8 @@ export const PortfolioHOC = React.memo(() => {
     const handleFilterKeyChange = key => () => setFilterKey(key)
     return <Portfolio
         handleFilterAll={handleFilterKeyChange('*')}
-        handleFilterVege={handleFilterKeyChange('react')}
-        handleFilterFruit={handleFilterKeyChange('node')}
+        handleFilterReact={handleFilterKeyChange('react')}
+        handleFilterNode={handleFilterKeyChange('node')}
+        handleFilterHTML={handleFilterKeyChange('html')}
     />;
 })

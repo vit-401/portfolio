@@ -23,7 +23,6 @@
 }
 
 .cardImg {
-  background-image: url('https://image.freepik.com/free-photo/image-human-brain_99433-298.jpg');
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -75,6 +74,17 @@
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
   font-size: 16px;
+}
+
+.cardDescriptionLinks {
+  span {
+    display: block;
+    color: #8dab5b;
+  }
+
+  a {
+    color: coral;
+  }
 }
 
 .cardDescriptioniTitle {
