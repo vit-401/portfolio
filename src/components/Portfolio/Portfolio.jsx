@@ -7,8 +7,43 @@ export const Portfolio = React.memo((props) => {
     const [activeFilter, setActiveFilter] = React.useState('All')
     const obj = [
         {value: 'All', id: 1, handler: props.handleFilterAll},
-        {value: 'Veges', id: 2, handler: props.handleFilterVege},
-        {value: 'Fruits', id: 3, handler: props.handleFilterFruit},
+        {value: 'React', id: 2, handler: props.handleFilterVege},
+        {value: 'NodeJs', id: 3, handler: props.handleFilterFruit},
+    ]
+
+    const works = [
+        {
+            title: 'TriMSocial',
+            code: 'https://djinni.co/my/dashboard/',
+            demo: 'https://djinni.co/my/dashboard/',
+            filterName: 'react',
+            description: 'React, Redux, JavaScript, RestAPI, HTML/CSS, functional and classes components, hooks, connect, HOC',
+            id: v1()
+        },
+        {
+            title: 'TriMSocial',
+            code: 'https://djinni.co/my/dashboard/',
+            demo: 'https://djinni.co/my/dashboard/',
+            filterName: 'react',
+            description: 'React, Redux, JavaScript, RestAPI, HTML/CSS, functional and classes components, hooks, connect, HOC',
+            id: v1()
+        },
+        {
+            title: 'TriMSocial',
+            code: 'https://djinni.co/my/dashboard/',
+            demo: 'https://djinni.co/my/dashboard/',
+            filterName: 'node',
+            description: 'React, Redux, JavaScript, RestAPI, HTML/CSS, functional and classes components, hooks, connect, HOC',
+            id: v1()
+        },
+        {
+            title: 'TriMSocial',
+            code: 'https://github.com/vit-401/code',
+            demo: 'https://github.com/vit-401/demo',
+            filterName: 'node',
+            description: 'React, Redux, JavaScript, RestAPI, HTML/CSS, functional and classes components, hooks, connect, HOC',
+            id: v1()
+        },
     ]
 
     return <section className="work">
@@ -30,13 +65,15 @@ export const Portfolio = React.memo((props) => {
             </ul>
             <div className={"filterWrap"}>
                 <div className="filter-container">
-                    <CardComponent name={'Potato'} filterName={'vege'}/>
-                    <CardComponent name={'Apple'} filterName={'fruit'}/>
-                    <CardComponent name={'BANA'} filterName={'fruit'}/>
-                    <CardComponent name={'Orange'} filterName={'fruit'}/>
-                    <CardComponent name={'Tomato'} filterName={'vege'}/>
-                    <CardComponent name={'Ananas'} filterName={'fruit'}/>
-                    <CardComponent name={'grape'} filterName={'fruit'}/>
+                    {works.map((i, index) => <CardComponent
+                        key={index}
+                        name={i.title}
+                        filterName={i.filterName}
+                        description={i.description}
+                        demo={i.demo}
+                        code={i.code}
+                    />)}
+
                 </div>
             </div>
 

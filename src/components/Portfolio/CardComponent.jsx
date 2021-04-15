@@ -8,14 +8,14 @@ export const CardComponent = React.memo((props) => {
                 <div className={'cardContent'}>
                     <div className={'cardInner'}>
                         <div className={'cardDescriptioniTitle'}>
-                            TriMSocial
+                            {props.name}
                         </div>
                         <div className={'cardDescription'}>
-                            React, Redux, JavaScript, RestAPI, HTML/CSS, functional and classes components, hooks, connect, HOC
+                            {props.description}
                         </div>
                         <div className={'cardDescriptionLinks'}>
-                            gitHub: <a href="#">https://djinni.co/my/dashboard/</a>
-                            demo: <a href="#">https://djinni.co/my/dashboard/</a>
+                            gitHub: <a href="#">{props.code}</a>
+                            demo: <a href="#">{props.demo}</a>
                         </div>
                     </div>
                 </div>
@@ -23,3 +23,11 @@ export const CardComponent = React.memo((props) => {
         </div>
     </div>;
 })
+
+
+
+
+
+// _______________
+
+
