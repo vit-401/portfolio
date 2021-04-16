@@ -4,7 +4,9 @@ import {Fade} from "react-reveal";
 export const CardComponent = React.memo((props) => {
     const str1 = 'https://vit-401.github.io//'
     const str2 = 'https://github.com/vit-401'
-    return <div className={`filter-item ${props.filterName}`}>
+    return <Fade buttom>
+        <div className={`filter-item ${props.filterName}`}>
+
             <div className={"card"}>
                 <div className={'cardImg'} style={{backgroundImage: `url(${props.photoURL})`}}>
                     <div className={'cardContent'}>
@@ -22,7 +24,7 @@ export const CardComponent = React.memo((props) => {
                                 }
                                 {
                                     props.demo ? <span>demo: <a
-                                        href={props.demo}>https://{props.demo.slice(str2.length)}</a></span> : null
+                                        href={props.demo}>{props.demo}</a></span> : null
                                 }
 
                             </div>
@@ -30,10 +32,10 @@ export const CardComponent = React.memo((props) => {
                     </div>
                 </div>
             </div>
-    </div>;
+        </div>
+    </Fade>
 })
 
 
-// _______________
 
 

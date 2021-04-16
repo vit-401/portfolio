@@ -15,6 +15,15 @@ export const Portfolio = React.memo((props) => {
 
     const works = [
         {
+            title: 'KeyStroy',
+            code: '',
+            demo: 'https://www.key-stroy.com',
+            filterName: 'html',
+            description: 'GULP, PHP, HTML/SCSS, Website business card. Implemented Sent to telegrams via telegram bot.',
+            photoURL: 'https://i.pinimg.com/originals/23/d0/2f/23d02f8aae2ee1c959b270e8043a1e47.jpg',
+            id: v1()
+        },
+        {
             title: 'TriMSocial',
             code: 'https://github.com/vit-401/SocialNetwork',
             demo: 'https://vit-401.github.io/SocialNetwork',
@@ -33,6 +42,17 @@ export const Portfolio = React.memo((props) => {
             photoURL: 'https://www.norma.uz/img/d5/e0/25e9fed55a221815aa4404edb3c9.jpg',
             id: v1()
         },
+        {
+            title: 'Coffeyka',
+            code: 'https://github.com/vit-401/coffeyka',
+            demo: 'https://vit-401.github.io/coffeyka/',
+            filterName: 'html',
+            description: 'PHP, Gulp, JavaScript, HTML, SCSS. Еhe site of the store`s cafe with the implementation' +
+                ' of an adaptive for a mobile device',
+            photoURL: 'http://novostiliteratury.ru/wp-content/uploads/2019/02/%D0%9A%D0%BD%D0%B8%D0%B6%D0%BD%D0%BE%D0%B5-%D0%BA%D0%B0%D1%84%D0%B52.jpg',
+            id: v1()
+        },
+
         {
             title: 'TodoList',
             code: 'https://github.com/vit-401/todolist-ts',
@@ -61,16 +81,16 @@ export const Portfolio = React.memo((props) => {
                 <div className={'moduleLine'}/>
             </Fade>
             <ul className={"workFilters"}>
-                <Fade bottom>
-                    {
-                        obj.map((f) => {
-                            return <li key={v1()} className={activeFilter === f.value ? 'active' : ''} onClick={() => {
-                                f.handler()
-                                setActiveFilter(f.value)
-                            }}>{f.value}</li>
-                        })
-                    }
-                </Fade>
+
+                {
+                    obj.map((f) => {
+                        return <li key={v1()} className={activeFilter === f.value ? 'active' : ''} onClick={() => {
+                            f.handler()
+                            setActiveFilter(f.value)
+                        }}>{f.value}</li>
+                    })
+                }
+
                 {/*<li className={'active'} onClick={props.handleFilterAll}>ALL</li>*/}
                 {/*<li className={''} onClick={props.handleFilterVege}>Show Veges</li>*/}
                 {/*<li className={''} onClick={props.handleFilterFruit}>Show Fruits</li>*/}
@@ -80,7 +100,7 @@ export const Portfolio = React.memo((props) => {
                 <div className="filter-container">
 
 
-                    {works.map((i, index) => <Fade buttom> <CardComponent
+                    {works.map((i, index) =>  <CardComponent
                         key={index}
                         name={i.title}
                         filterName={i.filterName}
@@ -88,7 +108,7 @@ export const Portfolio = React.memo((props) => {
                         demo={i.demo}
                         code={i.code}
                         photoURL={i.photoURL ? i.photoURL : 'https://image.freepik.com/free-photo/image-human-brain_99433-298.jpg'}
-                    /></Fade>)}
+                    />)}
 
 
                 </div>
