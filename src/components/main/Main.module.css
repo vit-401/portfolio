@@ -1,0 +1,102 @@
+.mainBlock {
+    min-height: 100vh;
+    background-color: #101010;
+    display: flex;
+    align-items: center;
+}
+
+.particles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.mainContainer{
+    margin-top: 100px;
+}
+
+.text {
+    width: 480px;
+    color: white;
+    padding: 30px;
+}
+
+.text h1 {
+    font-family: 'ArchivoBlack';
+    font-size: 70px;
+    margin: 5px;
+    text-transform: uppercase;
+    line-height: 80px;
+}
+
+.text h1 span{
+    color: #171717;
+    text-shadow: white 1px 1px 0, white -1px -1px 0,
+    white -1px 1px 0, white 1px -1px 0;
+}
+
+.text p {
+    color: #BBBBBB;
+    font-weight: bold;
+    margin: 0;
+    padding-left: 8px;
+}
+
+.photo {
+    width: 450px;
+    background-color: #B796D9;
+    z-index: 3;
+}
+
+@media screen and (max-width: 1162px){
+    .mainBlock{
+        background-color: #171717;
+    }
+}
+
+@media screen and (max-width: 977px){
+    .photo{
+        width: 440px;
+    }
+    .mainBlock{
+        background-color: #171717;
+    }
+}
+
+@media screen and (max-width: 625px){
+    .text h1{
+        font-size: 60px;
+    }
+    .mainBlock{
+        background-color: #171717;
+    }
+}
+@media screen and (max-width: 529px){
+    .photo{
+        width: 340px;
+    }
+    .mainBlock{
+        background-color: #171717;
+    }
+}
+
+@media screen and (max-width: 482px){
+    .text h1{
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 405px){
+    .text{
+        padding: 5px;
+    }
+    .text h1{
+        font-size: 40px;
+        line-height: 45px;
+    }
+    .photo{
+        width: 280px;
+    }
+}

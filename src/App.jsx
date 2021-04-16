@@ -17,9 +17,7 @@ export const App = React.memo(() => {
             <HamburgerHOC/>
             <HeaderHoc/>
             <PortfolioHOC/>
-
             <Skills/>
-
             <Contact/>
 
 

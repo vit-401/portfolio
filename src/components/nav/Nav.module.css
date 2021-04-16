@@ -1,0 +1,25 @@
+.nav{
+    border: 1px solid;
+    display: flex;
+    width: 280px;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+}
+
+.nav>*{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.active{
+    color: #B595D7;
+}
+
+.nav>*:hover{
+    text-decoration: overline;
+    color: #B595D7;
+}

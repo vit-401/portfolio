@@ -2,6 +2,7 @@ import React from "react";
 import './style.scss'
 import v1 from 'uuid';
 import {CardComponent} from "./CardComponent";
+import {Fade} from "react-reveal";
 
 export const Portfolio = React.memo((props) => {
     const [activeFilter, setActiveFilter] = React.useState('All')
@@ -52,26 +53,34 @@ export const Portfolio = React.memo((props) => {
         },
     ]
 
-    return <section className="work">
+    return <section id={"work"} className="work">
         <div className="container">
-            <div className={'titleSection'}>My Works</div>
-            <div className={'moduleLine'}/>
+            <Fade bottom>
+
+                <div className={'titleSection'}>My Works</div>
+                <div className={'moduleLine'}/>
+            </Fade>
             <ul className={"workFilters"}>
-                {
-                    obj.map((f) => {
-                        return <li key={v1()} className={activeFilter === f.value ? 'active' : ''} onClick={() => {
-                            f.handler()
-                            setActiveFilter(f.value)
-                        }}>{f.value}</li>
-                    })
-                }
+                <Fade bottom>
+                    {
+                        obj.map((f) => {
+                            return <li key={v1()} className={activeFilter === f.value ? 'active' : ''} onClick={() => {
+                                f.handler()
+                                setActiveFilter(f.value)
+                            }}>{f.value}</li>
+                        })
+                    }
+                </Fade>
                 {/*<li className={'active'} onClick={props.handleFilterAll}>ALL</li>*/}
                 {/*<li className={''} onClick={props.handleFilterVege}>Show Veges</li>*/}
                 {/*<li className={''} onClick={props.handleFilterFruit}>Show Fruits</li>*/}
             </ul>
             <div className={"filterWrap"}>
+
                 <div className="filter-container">
-                    {works.map((i, index) => <CardComponent
+
+
+                    {works.map((i, index) => <Fade buttom> <CardComponent
                         key={index}
                         name={i.title}
                         filterName={i.filterName}
@@ -79,11 +88,13 @@ export const Portfolio = React.memo((props) => {
                         demo={i.demo}
                         code={i.code}
                         photoURL={i.photoURL ? i.photoURL : 'https://image.freepik.com/free-photo/image-human-brain_99433-298.jpg'}
-                    />)}
+                    /></Fade>)}
+
 
                 </div>
             </div>
 
         </div>
-    </section>;
+    </section>
+        ;
 })

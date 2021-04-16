@@ -1,60 +1,16 @@
-import React,{useState} from 'react'
-import ReactMixitup from 'react-mixitup'
-import { shuffle, range } from 'lodash'
+import React from 'react'
 
-const Ex = () => {
-    const [state, setState] = useState({
-        items: [1, 2, 3, 4]
-    })
-    const shuffle=()=>{
-        setState({
-            items: shuffle(range(Math.round(Math.random() * 15)))
-        })
-    }
-    return(
-        <Fragment>
-            <button onClick={shuffle}>Shuffle</button>
-            <ReactMixitup
-                items={state.items}
-                renderCells={items => (
-                    <div style={{ background: 'yellow' }}>
-                        {items.map(({ key, ref, style }) => (
-                            <div key={key} ref={ref} style={{ ...style, background: 'red' }}>
-                                {key}
-                            </div>
-                        ))}
-                    </div>
-                )}
-            />
-        </Fragment>
-    )
-}
+import { Link } from "react-scroll";
 
-class Example extends React.Component {
-    state = { items: [1, 2, 3, 4] }
-
-    shuffle = () =>
-        this.setState({
-            items: shuffle(range(Math.round(Math.random() * 15)))
-        })
-
-    render() {
-        return (
-            <Fragment>
-                <button onClick={this.shuffle}>Shuffle</button>
-                <ReactMixitup
-                    items={this.state.items}
-                    renderCells={items => (
-                        <div style={{ background: 'yellow' }}>
-                            {items.map(({ key, ref, style }) => (
-                                <div key={key} ref={ref} style={{ ...style, background: 'red' }}>
-                                    {key}
-                                </div>
-                            ))}
-                        </div>
-                    )}
-                />
-            </Fragment>
-        )
-    }
+export default function App2() {
+    return (
+        <div className="App">
+            <Link to="main">Main</Link>
+            <h1>Hello CodeSandbox</h1>
+            <h2 style={{ height: "200vh" }}>
+                Start editing to see some magic happen!
+            </h2>
+            <div id="main">Main</div>
+        </div>
+    );
 }

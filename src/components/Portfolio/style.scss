@@ -80,6 +80,7 @@
   span {
     display: block;
     color: #8dab5b;
+    margin: 10px 0;
   }
 
   a {
@@ -198,14 +199,14 @@ li + li {
 @media (max-width: 398px) {
   .filter-item {
     width: 19rem;
-    height: 22rem;
+    height: 24rem;
   }
 }
 
 @media (max-width: 368px) {
   .filter-item {
     width: 16rem;
-    height: 19rem;
+    height: 26rem;
   }
   .cardDescription {
     font-size: 13px;
@@ -223,7 +224,7 @@ li + li {
 @media (max-width: 348px) {
   .filter-item {
     width: 14rem;
-    height: 16rem;
+    height: 390px;
     margin: 15px;
   }
 }

@@ -30,7 +30,7 @@ export const HeaderHoc=()=>{
             },
             "move": {
                 "random": true,
-                "speed": 1,
+                "speed": 2,
                 "direction": "top",
                 "out_mode": "out"
             }
@@ -40,17 +40,18 @@ export const HeaderHoc=()=>{
     let ParticleParamsLines = {
         particles: {
             size: {
-                value: 2
+                value: 1
             },
             line_linked: {
                 enable: true,
+                // value: 110
             },
             "move": {
                 "random": true,
-                "speed": 2,
+                "speed": 3,
             }
         }
     }
 
-    return (<Header params={ParticleParamsLines} params1={ParticleParamsDots}/>)
+    return (<Header  params={ParticleParamsLines} params1={ParticleParamsDots}/>)
 }

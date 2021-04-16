@@ -1,5 +1,6 @@
 import React from "react";
 import {MenuList} from "./MenuList";
+import {Link} from "react-scroll"
 
 export const Hamburger = React.memo((props) => {
     return <>
@@ -11,11 +12,30 @@ export const Hamburger = React.memo((props) => {
             <div className="Menu ham-tilt">
                 <nav>
                     <ul className="Menu-list">
-                        <MenuList name={'Home'}/>
-                        <MenuList name={'Work'}/>
-                        <MenuList name={'Services'}/>
-                        <MenuList name={'Blog'}/>
-                        <MenuList name={'Contact'}/>
+                        <Link to="header"
+                              spy={true}
+                              smooth={true}
+                              offset={-50}
+                              duration={500}
+                        > <MenuList onClick={props.onClick} name={'Home'}/></Link>
+                        <Link to="work"
+                              spy={true}
+                              smooth={true}
+                              offset={-50}
+                              duration={500}
+                        > <MenuList onClick={props.onClick} name={'Work'}/></Link>
+                        <Link to="skills"
+                              spy={true}
+                              smooth={true}
+                              offset={-50}
+                              duration={500}
+                        > <MenuList onClick={props.onClick} name={'Skills'}/></Link>
+                        <Link to="contact"
+                              spy={true}
+                              smooth={true}
+                              offset={-50}
+                              duration={500}
+                        > <MenuList onClick={props.onClick} name={'Contact'}/></Link>
                     </ul>
                 </nav>
             </div>

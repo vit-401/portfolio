@@ -2,6 +2,7 @@ import React from "react";
 import {SkillsItem} from "./SkillsItem";
 import './style.scss'
 import v1 from 'uuid';
+import {Fade} from "react-reveal";
 
 
 export function Skills() {
@@ -52,13 +53,17 @@ export function Skills() {
             text: 'Document database, which means it stores data in JSON-like documents.'
         },
     ]
-    return <section className="skills">
+    return <section id={"skills"} className="skills">
         <div className="container">
-            <div className="titleSection">Skills</div>
-            <div className="skillsInner">
-                {
-                    dataItems.map((i, index) => <SkillsItem key={v1()} urlImg={i.urlImg} title={i.title} text={i.text}/>)
-                }
+            <div  className="titleSection">Skills</div>
+            <div  id="skills" className="skillsInner">
+                <Fade buttom>
+                    {
+
+                        dataItems.map((i, index) => <SkillsItem key={v1()} urlImg={i.urlImg} title={i.title}
+                                                                text={i.text}/>)
+                    }
+                </Fade>
             </div>
         </div>
     </section>;
