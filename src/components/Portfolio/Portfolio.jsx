@@ -13,6 +13,24 @@ export const Portfolio = React.memo((props) => {
         {value: 'Markup', id: 4, handler: props.handleFilterHTML},
     ]
 
+    const s ={
+        asset_type: [], //select
+        address:"",
+        policy_type: [], //select
+        policy_number:  "",
+        policy_period:"", // 2 date
+        policy_cost:"",
+        policy_coverage:"",
+        incurance_agency:"",
+        agency_phone:"",
+        incurance_agent:"",
+        agent_phone:"",
+        agent_email:"",
+        carrier_name:"",
+        carrier_email:"",
+        carrier_phone:"",
+    }
+
     const works = [
         {
             title: 'KeyStroy',

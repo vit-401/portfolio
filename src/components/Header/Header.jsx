@@ -27,8 +27,8 @@ export const Header = React.memo((props) => {
                 </div>
                 <div className="header__item">
                     <Fade bottom>
-                        <div className="header__photo parallaxed">
-                            <img src={photo} alt=""/>
+                        <div className="header__photo">
+                            <img src={photo} alt="" className={"parallaxed"}/>
                             <div className={"border parallaxed2"}/>
                         </div>
                     </Fade>

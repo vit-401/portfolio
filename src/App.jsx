@@ -12,6 +12,8 @@ import {Skills} from "./components/Skills/Skills";
 export const App = React.memo(() => {
 
 
+
+    
     return (
         <>
             <HamburgerHOC/>
