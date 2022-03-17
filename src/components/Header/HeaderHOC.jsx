@@ -11,7 +11,7 @@ export const HeaderHoc=()=>{
         let i;
         for (i = 0; i < x.length; i++) {
             x[i].style.transform = 'translate3d(' + amountMovedX + 'px,' + amountMovedY + 'px, 0px)'
-            x2[i].style.transform = 'translate3d(' + amountMovedX * 2 + 'px,' + amountMovedY + 'px, 0px)'
+            x2[i].style.transform = 'translate3d(' + amountMovedX * 2 + 'px,' + amountMovedY * 2 + 'px, 0px)'
         }
     }, [])
 
