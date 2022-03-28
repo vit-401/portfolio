@@ -2,6 +2,8 @@ import React from 'react'
 
 import { Link } from "react-scroll";
 
+
+
 export default function App2() {
     return (
         <div className="App">
@@ -13,4 +15,8 @@ export default function App2() {
             <div id="main">Main</div>
         </div>
     );
+
+
 }
+
+
